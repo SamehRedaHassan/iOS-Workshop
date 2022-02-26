@@ -39,6 +39,16 @@
                ReferencedContainer = "container:OrderApp.xcodeproj">
             </BuildableReference>
          </TestableReference>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "84E0CC5827CA5B6F0049FCE6"
+               BuildableName = "OrderAppTestsbySameh.xctest"
+               BlueprintName = "OrderAppTestsbySameh"
+               ReferencedContainer = "container:OrderApp.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
    </TestAction>
    <LaunchAction

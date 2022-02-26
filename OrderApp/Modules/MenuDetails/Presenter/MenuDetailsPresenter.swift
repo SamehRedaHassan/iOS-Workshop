@@ -27,6 +27,5 @@ class MenuDetailsPresenter : MenuDetailsPresenterProtocol {
     func addItemToOrder(){
         SharedMenu.sharedItems.append(item)
        NotificationCenter.default.post(name:Notification.Name("UPDATE Padge"), object: nil)
-     
     }
 }
