@@ -18,9 +18,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         orderTabBarItem = (window?.rootViewController as?
             UITabBarController)?.viewControllers?[1].tabBarItem
         
-        NotificationCenter.default.addObserver(self, selector:
-            #selector(updateOrderBadge),
-                                               name: Notification.Name("UPDATE ORDER"), object: nil)
+        NotificationCenter.default.addObserver(self, selector:#selector(updateOrderBadge),
+                                               name: Notification.Name("UPDATE Padge"), object: nil)
         
         // Use this method to optionally configure and attach the UIWindow `window` to the provided UIWindowScene `scene`.
         // If using a storyboard, the `window` property will automatically be initialized and attached to the scene.

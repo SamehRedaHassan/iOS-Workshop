@@ -9,20 +9,24 @@
 import Foundation
 class OrderTableViewPresenter: OrderPresenterProtocol{
  
-    var networkManager : NetworkingProtocol!
+    //MARK: - Properties
+    var networkManager : NetworkingProtocol
+    var view    : OrderTableViewProtocol
     
-    init(){
-        networkManager = NetworkManager()
-        
+    //MARK: - Life Cycle
+    init(networkManager : NetworkingProtocol = NetworkManager(), view : OrderTableViewProtocol){
+        self.view = view
+        self.networkManager = networkManager
     }
-    func getSharedItem(atIndex index: Int)->MenuItem {
+    
+    //MARK: - Functions
+    func getSharedItem(atIndex index: Int)->ItemProtocol {
         return SharedMenu.sharedItems[index]
     }
     
     func getItemsCount()-> Int{
         return  SharedMenu.sharedItems.count
     }
-    
     
     func deleteItem(atIndex : Int) {
         SharedMenu.sharedItems.remove(at: atIndex)
@@ -33,16 +37,14 @@ class OrderTableViewPresenter: OrderPresenterProtocol{
         let ids = SharedMenu.sharedItems.map { (menuItem) -> Int in
             return menuItem.id
         }
-        networkManager.request(fromEndpoint: .order, httpMethod: .POST, param: ["menuIds" : ids]) { (result:Result<OrderResponse, Error>) in
+        networkManager.request(fromEndpoint: .order, httpMethod: .POST, param: ["menuIds" : ids]) {[weak self] (result:Result<OrderResponse, Error>) in
                    switch result {
                    case .success(let response):
-                    print(response.prepTime)
+                    self?.view.showConfirmationAlert(prepTime: response.prepTime)
+                    SharedMenu.sharedItems.removeAll()
                    case .failure(let error):
                        print(error.localizedDescription)
                    }
                }
      }
-    
-    
-    
 }

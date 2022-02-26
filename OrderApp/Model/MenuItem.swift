@@ -7,7 +7,19 @@
 //
 
 import Foundation
-struct MenuItem: Codable {
+protocol ItemProtocol {
+    var id : Int {get set}
+    var name : String {get set}
+    var detailText : String {get set}
+    var price : Double {get set}
+    var category : String {get set}
+    var imageURL : String {get set}
+
+}
+
+
+
+struct MenuItem: Codable , ItemProtocol{
     var id: Int
     var name: String
     var detailText: String

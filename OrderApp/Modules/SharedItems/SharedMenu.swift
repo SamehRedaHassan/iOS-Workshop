@@ -8,6 +8,6 @@
 
 import Foundation
 class SharedMenu : MenuController{
-    static var sharedItems: [MenuItem] = []
+    static var sharedItems: [ItemProtocol] = []
     private init(){}
 }

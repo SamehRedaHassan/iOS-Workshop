@@ -6,13 +6,10 @@
 //  Copyright © 2022 admin. All rights reserved.
 //
 
-
-
-
 protocol MenuuPresenterProtocol{
     func getMenu()
     func getName(forIndex index: Int) -> String
     func getPrice(forIndex index: Int) -> Double
-    func getItem(forIndex index: Int)-> MenuItem
+    func getItem(forIndex index: Int)-> ItemProtocol
     func getCount() -> Int
 }

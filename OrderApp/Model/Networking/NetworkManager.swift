@@ -31,14 +31,10 @@ class NetworkManager : NetworkingProtocol {
         }
         var request = URLRequest(url: url)
         request.httpMethod = httpMethod.rawValue
-        
+        request.setValue("application/json", forHTTPHeaderField: "Content-Type") // the request is JSON
+               request.setValue("application/json", forHTTPHeaderField: "Accept") // the response expected to be in JSON format
         if let params = param {
-//             let jsonEncoder = JSONEncoder()
-//             let jsonData = try? jsonEncoder.encode([1,2])
-//            print(jsonData)
-            
             let jsonData = try? JSONSerialization.data(withJSONObject: params)
-            print(params)
             request.httpBody = jsonData
          
         }

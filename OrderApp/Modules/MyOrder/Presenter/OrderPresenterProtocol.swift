@@ -8,8 +8,7 @@
 
 import Foundation
 protocol OrderPresenterProtocol {
-    
-    func getSharedItem(atIndex index : Int)->MenuItem
+    func getSharedItem(atIndex index : Int)->ItemProtocol
     func deleteItem(atIndex index : Int)
     func getItemsCount()->Int
     func submitOrder()

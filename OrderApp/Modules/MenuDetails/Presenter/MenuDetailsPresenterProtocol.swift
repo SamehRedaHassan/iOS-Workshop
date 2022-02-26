@@ -8,6 +8,6 @@
 
 import Foundation
 protocol MenuDetailsPresenterProtocol {
-    func getItemDetails()->MenuItem
+    func getItemDetails()->ItemProtocol
     func addItemToOrder()
 }

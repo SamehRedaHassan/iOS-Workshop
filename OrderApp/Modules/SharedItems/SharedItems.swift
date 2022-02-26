@@ -8,6 +8,5 @@
 
 import Foundation
 protocol MenuController {
-    static var sharedItems : [MenuItem] {get set}
-    
+    static var sharedItems : [ItemProtocol] {get set}
 }

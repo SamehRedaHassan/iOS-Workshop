@@ -24,16 +24,14 @@ class MenuDetailsViewController: UIViewController {
         super.viewDidLoad()
         configureUI() 
     }
-    
-
    
     // MARK: - IBAction
-
     @IBAction func addTocartButtonPressed(sender : UIButton){
         presenter.addItemToOrder()
     }
 
 }
+// MARK: - Extension
 extension MenuDetailsViewController : MenuDetailsViewProtocol{
     func configureUI() {
        let item =   presenter.getItemDetails()
@@ -42,7 +40,5 @@ extension MenuDetailsViewController : MenuDetailsViewProtocol{
         nameLabel.text  = item.name
         itemImageView.load(url: item.imageURL)
     }
-    
-    
 }
 

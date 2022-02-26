@@ -12,7 +12,6 @@ class CategoryViewController: UITableViewController {
     //MARK: - Properties
     var presenter: CategoryPresenterProtocol!
     
-    
     //MARK: - Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,7 +19,6 @@ class CategoryViewController: UITableViewController {
         presenter.getCategories()
     }
 
-    
     // MARK: - Table view data source
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return presenter.getCount()
@@ -32,7 +30,6 @@ class CategoryViewController: UITableViewController {
         return cell
     }
  
-    
     // MARK: - Navigation    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let indexPath = self.tableView.indexPathForSelectedRow {
