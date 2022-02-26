@@ -41,7 +41,18 @@
 		84DE393F27C8D8B900755AF1 /* CategoryPresenterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84DE393E27C8D8B900755AF1 /* CategoryPresenterProtocol.swift */; };
 		84DE394427C8E18700755AF1 /* CategoryViewProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84DE394327C8E18700755AF1 /* CategoryViewProtocol.swift */; };
 		84E0CC3E27CA24B10049FCE6 /* OrderTableViewProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E0CC3D27CA24B10049FCE6 /* OrderTableViewProtocol.swift */; };
+		CA79AB0A27CA50DE00BEFF93 /* OrderAppTestsThoraya.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA79AB0927CA50DE00BEFF93 /* OrderAppTestsThoraya.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		CA79AB0C27CA50DE00BEFF93 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 84DE38F427C8C4B400755AF1 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 84DE38FB27C8C4B400755AF1;
+			remoteInfo = OrderApp;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		84DCDBD927C8FF4B005C9000 /* MenuuTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuuTableViewController.swift; sourceTree = "<group>"; };
@@ -80,10 +91,20 @@
 		84DE393E27C8D8B900755AF1 /* CategoryPresenterProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryPresenterProtocol.swift; sourceTree = "<group>"; };
 		84DE394327C8E18700755AF1 /* CategoryViewProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryViewProtocol.swift; sourceTree = "<group>"; };
 		84E0CC3D27CA24B10049FCE6 /* OrderTableViewProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderTableViewProtocol.swift; sourceTree = "<group>"; };
+		CA79AB0727CA50DE00BEFF93 /* OrderAppTestsThoraya.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = OrderAppTestsThoraya.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		CA79AB0927CA50DE00BEFF93 /* OrderAppTestsThoraya.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderAppTestsThoraya.swift; sourceTree = "<group>"; };
+		CA79AB0B27CA50DE00BEFF93 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		84DE38F927C8C4B400755AF1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CA79AB0427CA50DE00BEFF93 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -123,6 +144,7 @@
 			isa = PBXGroup;
 			children = (
 				84DE38FE27C8C4B500755AF1 /* OrderApp */,
+				CA79AB0827CA50DE00BEFF93 /* OrderAppTestsThoraya */,
 				84DE38FD27C8C4B500755AF1 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -131,6 +153,7 @@
 			isa = PBXGroup;
 			children = (
 				84DE38FC27C8C4B500755AF1 /* OrderApp.app */,
+				CA79AB0727CA50DE00BEFF93 /* OrderAppTestsThoraya.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -303,6 +326,15 @@
 			path = Presenter;
 			sourceTree = "<group>";
 		};
+		CA79AB0827CA50DE00BEFF93 /* OrderAppTestsThoraya */ = {
+			isa = PBXGroup;
+			children = (
+				CA79AB0927CA50DE00BEFF93 /* OrderAppTestsThoraya.swift */,
+				CA79AB0B27CA50DE00BEFF93 /* Info.plist */,
+			);
+			path = OrderAppTestsThoraya;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -323,6 +355,24 @@
 			productReference = 84DE38FC27C8C4B500755AF1 /* OrderApp.app */;
 			productType = "com.apple.product-type.application";
 		};
+		CA79AB0627CA50DE00BEFF93 /* OrderAppTestsThoraya */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CA79AB1027CA50DE00BEFF93 /* Build configuration list for PBXNativeTarget "OrderAppTestsThoraya" */;
+			buildPhases = (
+				CA79AB0327CA50DE00BEFF93 /* Sources */,
+				CA79AB0427CA50DE00BEFF93 /* Frameworks */,
+				CA79AB0527CA50DE00BEFF93 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				CA79AB0D27CA50DE00BEFF93 /* PBXTargetDependency */,
+			);
+			name = OrderAppTestsThoraya;
+			productName = OrderAppTestsThoraya;
+			productReference = CA79AB0727CA50DE00BEFF93 /* OrderAppTestsThoraya.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -335,6 +385,10 @@
 				TargetAttributes = {
 					84DE38FB27C8C4B400755AF1 = {
 						CreatedOnToolsVersion = 11.5;
+					};
+					CA79AB0627CA50DE00BEFF93 = {
+						CreatedOnToolsVersion = 11.5;
+						TestTargetID = 84DE38FB27C8C4B400755AF1;
 					};
 				};
 			};
@@ -352,6 +406,7 @@
 			projectRoot = "";
 			targets = (
 				84DE38FB27C8C4B400755AF1 /* OrderApp */,
+				CA79AB0627CA50DE00BEFF93 /* OrderAppTestsThoraya */,
 			);
 		};
 /* End PBXProject section */
@@ -364,6 +419,13 @@
 				84DE390C27C8C4B900755AF1 /* LaunchScreen.storyboard in Resources */,
 				84DE390927C8C4B900755AF1 /* Assets.xcassets in Resources */,
 				84DE390727C8C4B500755AF1 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CA79AB0527CA50DE00BEFF93 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -408,7 +470,23 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		CA79AB0327CA50DE00BEFF93 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CA79AB0A27CA50DE00BEFF93 /* OrderAppTestsThoraya.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		CA79AB0D27CA50DE00BEFF93 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 84DE38FB27C8C4B400755AF1 /* OrderApp */;
+			targetProxy = CA79AB0C27CA50DE00BEFF93 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		84DE390527C8C4B500755AF1 /* Main.storyboard */ = {
@@ -580,6 +658,44 @@
 			};
 			name = Release;
 		};
+		CA79AB0E27CA50DE00BEFF93 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = OrderAppTestsThoraya/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "th-h.OrderAppTestsThoraya";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/OrderApp.app/OrderApp";
+			};
+			name = Debug;
+		};
+		CA79AB0F27CA50DE00BEFF93 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = OrderAppTestsThoraya/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "th-h.OrderAppTestsThoraya";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/OrderApp.app/OrderApp";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -597,6 +713,15 @@
 			buildConfigurations = (
 				84DE391127C8C4B900755AF1 /* Debug */,
 				84DE391227C8C4B900755AF1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CA79AB1027CA50DE00BEFF93 /* Build configuration list for PBXNativeTarget "OrderAppTestsThoraya" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CA79AB0E27CA50DE00BEFF93 /* Debug */,
+				CA79AB0F27CA50DE00BEFF93 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
