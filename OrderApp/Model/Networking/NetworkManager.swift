@@ -24,10 +24,18 @@ class NetworkManager : NetworkingProtocol {
                 completion(result)
             }
         }
-
-        guard let url = URL(string: "\(baseURL)\(fromEndpoint.rawValue)") else {
+        guard var url = URL(string: "\(baseURL)\(fromEndpoint.rawValue)") else {
             completionOnMain(.failure(ManagerErrors.invalidUrl))
             return
+        }
+        
+        if(fromEndpoint == .menu){
+            var components = URLComponents(
+                url: url,
+                resolvingAgainstBaseURL: true
+            )!
+            components.queryItems = [URLQueryItem(name: "category", value: param!["category"] as? String)]
+            url = components.url!
         }
         var request = URLRequest(url: url)
         request.httpMethod = httpMethod.rawValue
@@ -35,8 +43,10 @@ class NetworkManager : NetworkingProtocol {
                request.setValue("application/json", forHTTPHeaderField: "Accept") // the response expected to be in JSON format
         if let params = param {
             let jsonData = try? JSONSerialization.data(withJSONObject: params)
-            request.httpBody = jsonData
-         
+            if(fromEndpoint == .order){
+                request.httpBody = jsonData
+            }
+                
         }
 
         let urlSession = URLSession.shared.dataTask(with: request) { data, response, error in
