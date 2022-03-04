@@ -17,15 +17,16 @@ class MenuuPresenter : MenuuPresenterProtocol{
     let view: MenuuViewProtocol
 
     //MARK: - Life cycle
-    init(view :MenuuViewProtocol , category : String) {
-        networkManager = NetworkManager()
+    init(networkManager: NetworkingProtocol = NetworkManager(), view :MenuuViewProtocol , category : String) {
+        
+        self.networkManager = networkManager
         self.view = view
         self.category = category
     }
     
     //MARK: - Functions
     func getMenu(){
-        networkManager.request(fromEndpoint: .menu, httpMethod: .GET, param: nil) { [weak self] (result:Result<MenuResponse, Error>) in
+        networkManager.request(fromEndpoint: .menu, httpMethod: .GET, param: ["category" : category!]) { [weak self] (result:Result<MenuResponse, Error>) in
             switch result {
             case .success(let response):
                 self?.items = response.items
@@ -54,4 +55,3 @@ class MenuuPresenter : MenuuPresenterProtocol{
         return items.count
     }
 }
-
