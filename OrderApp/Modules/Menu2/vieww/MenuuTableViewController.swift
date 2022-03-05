@@ -12,7 +12,7 @@ class MenuuTableViewController: UITableViewController {
     
     //MARK: - Properties
     var presenter: MenuuPresenterProtocol!
-    
+
     //MARK: - Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()

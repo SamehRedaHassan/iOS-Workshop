@@ -10,12 +10,12 @@ import UIKit
 
 class CategoryViewController: UITableViewController {
     //MARK: - Properties
-    var presenter: CategoryPresenterProtocol!
+   lazy var presenter: CategoryPresenterProtocol = CategoryPresenter(view: self)
     
     //MARK: - Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        presenter = CategoryPresenter(view: self)
+       // presenter = CategoryPresenter(view: self)
         presenter.getCategories()
     }
 
@@ -33,8 +33,8 @@ class CategoryViewController: UITableViewController {
     // MARK: - Navigation    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let indexPath = self.tableView.indexPathForSelectedRow {
-                   let destVC = segue.destination as! MenuuTableViewController
-            let menuPresenter = MenuuPresenter(view: destVC, category: presenter.getCategory(index: indexPath.row))
+            let destVC = segue.destination as! MenuuTableViewController
+            let menuPresenter = MenuuPresenter(networkManager: NetworkManager(), view: destVC, category: presenter.getCategory(index: indexPath.row))
            destVC.presenter = menuPresenter
         }
     }
