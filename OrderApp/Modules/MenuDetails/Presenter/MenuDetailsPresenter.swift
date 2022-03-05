@@ -11,13 +11,11 @@ class MenuDetailsPresenter : MenuDetailsPresenterProtocol {
     //MARK: - Properties
     var item : ItemProtocol
     var view : MenuDetailsViewProtocol
-    var networkManager : NetworkingProtocol
     
     //MARK: - life cycle
-    init(networkManager : NetworkingProtocol = NetworkManager(),menuItem : ItemProtocol , view : MenuDetailsViewProtocol){
+    init(menuItem : ItemProtocol , view : MenuDetailsViewProtocol){
         self.view = view
         self.item = menuItem
-        self.networkManager = networkManager
     }
     //MARK: - functions
     func getItemDetails() -> ItemProtocol {
