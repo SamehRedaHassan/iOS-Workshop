@@ -18,6 +18,7 @@ class MenuuPresenter : MenuuPresenterProtocol{
 
     //MARK: - Life cycle
     init(networkManager: NetworkingProtocol,view :MenuuViewProtocol , category : String) {
+        
         self.networkManager = networkManager
         self.view = view
         self.category = category
@@ -54,4 +55,3 @@ class MenuuPresenter : MenuuPresenterProtocol{
         return items.count
     }
 }
-
