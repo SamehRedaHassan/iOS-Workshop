@@ -1,0 +1,12 @@
+{
+    "items": [
+        {
+            "category": "soups",
+            "id": 5,
+            "image_url": "http://localhost:8080/images/5.png",
+            "name": "Chicken Noodle Soup",
+            "description": "Chicken simmered alongside yellow onions, carrots, celery, and bay leaves.",
+            "price": 3.5
+        }
+    ]
+}

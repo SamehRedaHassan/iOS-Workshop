@@ -13,19 +13,19 @@ class MenuuPresenter : MenuuPresenterProtocol{
     //MARK: - Properties
     var networkManager: NetworkingProtocol
     var items: [ItemProtocol] = []
-    var category : String!
+    var category : String
     let view: MenuuViewProtocol
 
     //MARK: - Life cycle
-    init(view :MenuuViewProtocol , category : String) {
-        networkManager = NetworkManager()
+    init(networkManager: NetworkingProtocol,view :MenuuViewProtocol , category : String) {
+        self.networkManager = networkManager
         self.view = view
         self.category = category
     }
     
     //MARK: - Functions
     func getMenu(){
-        networkManager.request(fromEndpoint: .menu, httpMethod: .GET, param: nil) { [weak self] (result:Result<MenuResponse, Error>) in
+        networkManager.request(fromEndpoint: .menu, httpMethod: .GET, param: nil, queryIrtems: ["category":category]) { [weak self] (result:Result<MenuResponse, Error>) in
             switch result {
             case .success(let response):
                 self?.items = response.items

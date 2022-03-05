@@ -84,7 +84,7 @@
                                     </subviews>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <segue destination="a6w-Od-fXa" kind="show" id="Y2O-8S-p5n"/>
+                                    <segue destination="a6w-Od-fXa" kind="show" identifier="CategoryToMenuItemsSegue" id="Y2O-8S-p5n"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>

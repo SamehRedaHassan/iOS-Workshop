@@ -17,7 +17,7 @@ class NetworkManager : NetworkingProtocol {
 
 
     //MARK: - HttpMethod
-    func request<T>(fromEndpoint: EndPoint, httpMethod: HttpMethod, param: [String : Any]? = nil, completion: @escaping (Result<T, Error>) -> Void) where T : Decodable {
+    func request<T>(fromEndpoint: EndPoint, httpMethod: HttpMethod, param: [String : Any]? = nil,queryIrtems: [String : String]? ,completion: @escaping (Result<T, Error>) -> Void) where T : Decodable {
         
         let completionOnMain: (Result<T, Error>) -> Void = { result in
             DispatchQueue.main.async {
@@ -25,12 +25,23 @@ class NetworkManager : NetworkingProtocol {
             }
         }
 
-        guard let url = URL(string: "\(baseURL)\(fromEndpoint.rawValue)") else {
+        guard let urll = URL(string: "\(baseURL)\(fromEndpoint.rawValue)") else {
             completionOnMain(.failure(ManagerErrors.invalidUrl))
             return
         }
+        
+        
+        var components = URLComponents(url: urll, resolvingAgainstBaseURL: false)
+        if let queryItem = queryIrtems{
+            components?.queryItems = queryItem.map { (key, value) in
+                URLQueryItem(name: key, value: value)
+            }
+            
+        }
+        guard let url = components?.url else{return}
         var request = URLRequest(url: url)
         request.httpMethod = httpMethod.rawValue
+      
         request.setValue("application/json", forHTTPHeaderField: "Content-Type") // the request is JSON
                request.setValue("application/json", forHTTPHeaderField: "Accept") // the response expected to be in JSON format
         if let params = param {

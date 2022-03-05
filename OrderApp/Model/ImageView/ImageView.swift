@@ -11,7 +11,7 @@ extension UIImageView {
         DispatchQueue.global().async { [weak self] in
             var temp = url
             temp.removeLast(4)
-            guard let newUrl = URL(string: "https://www.bbcgoodfoodme.com/assets/legacy/recipe/recipe-image/2019/06/easy-cherry-jam.jpg" )else{
+            guard let newUrl = URL(string: "https://taiwebs.com/upload/images/light-image-resizer-1.png")else{
                 print("DDDDDDD")
                 return
             }

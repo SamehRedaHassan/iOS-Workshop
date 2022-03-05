@@ -9,5 +9,5 @@
 import Foundation
 class SharedMenu : MenuController{
     static var sharedItems: [ItemProtocol] = []
-    private init(){}
+    //private init(){}
 }

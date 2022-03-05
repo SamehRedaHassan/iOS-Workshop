@@ -30,14 +30,18 @@ class OrderTableViewPresenter: OrderPresenterProtocol{
     
     func deleteItem(atIndex : Int) {
         SharedMenu.sharedItems.remove(at: atIndex)
-        //NotificationCenter.default.post(name:Notification.Name("UPDATE ORDER"), object: nil)
+        
     }
     
-    func submitOrder() {
-        let ids = SharedMenu.sharedItems.map { (menuItem) -> Int in
-            return menuItem.id
+     func getOrderIds()->[Int]{
+        return  SharedMenu.sharedItems.map { (menuItem) -> Int in
+                 return menuItem.id
         }
-        networkManager.request(fromEndpoint: .order, httpMethod: .POST, param: ["menuIds" : ids]) {[weak self] (result:Result<OrderResponse, Error>) in
+    }
+    
+    
+    func submitOrder() {
+        networkManager.request(fromEndpoint: .order, httpMethod: .POST, param: ["menuIds" : getOrderIds()], queryIrtems: nil) {[weak self] (result:Result<OrderResponse, Error>) in
                    switch result {
                    case .success(let response):
                     self?.view.showConfirmationAlert(prepTime: response.prepTime)

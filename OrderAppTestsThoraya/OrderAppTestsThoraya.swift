@@ -12,7 +12,7 @@ import XCTest
 
 class OrderAppTests: XCTestCase {
     
-    var networkManager = NetworkManager()
+   /* var networkManager = NetworkManager()
     
     override func setUpWithError() throws {
         // Put setup code here. This method is called before the invocation of each test method in the class.
@@ -25,7 +25,7 @@ class OrderAppTests: XCTestCase {
     func testLoadCategoriesFromAPI() throws {
         
         let expect = expectation(description: "Waiting for loading categories from the API")
-        networkManager.request(fromEndpoint: .categories, httpMethod: .GET, param: nil) { (result:Result<CategoriesResponse, Error>) in
+        networkManager.request(fromEndpoint: .categories, httpMethod: .GET, param: nil, queryIrtems: nil) { (result:Result<CategoriesResponse, Error>) in
             
             switch result {
             case .success(let response):
@@ -42,7 +42,7 @@ class OrderAppTests: XCTestCase {
     func testLoadMenuItemsFromAPI() throws {
         
         let expect = expectation(description: "Waiting for loading menu items from the API")
-        networkManager.request(fromEndpoint: .menu, httpMethod: .GET, param: nil) { (result:Result<MenuResponse, Error>) in
+        networkManager.request(fromEndpoint: .menu, httpMethod: .GET, param: nil, queryIrtems: nil) { (result:Result<MenuResponse, Error>) in
             
             switch result {
             case .success(let response):
@@ -53,6 +53,6 @@ class OrderAppTests: XCTestCase {
             }
         }
         waitForExpectations(timeout: 5, handler: nil)
-    }
+    }*/
 }
 

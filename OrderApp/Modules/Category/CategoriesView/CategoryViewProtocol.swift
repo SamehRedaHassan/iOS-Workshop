@@ -8,6 +8,6 @@
 
 import Foundation
 
-protocol CategoryViewProtocl {
+protocol CategoryViewProtocl : AnyObject {
     func reloadTableView()
 }
