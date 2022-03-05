@@ -61,6 +61,10 @@
 		84E0CC3E27CA24B10049FCE6 /* OrderTableViewProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E0CC3D27CA24B10049FCE6 /* OrderTableViewProtocol.swift */; };
 		84E0CC5C27CA5B6F0049FCE6 /* OrderAppTestsbySameh.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E0CC5B27CA5B6F0049FCE6 /* OrderAppTestsbySameh.swift */; };
 		CA79AB0A27CA50DE00BEFF93 /* OrderAppTestsThoraya.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA79AB0927CA50DE00BEFF93 /* OrderAppTestsThoraya.swift */; };
+		CAFFAD6927D3F6410015FB60 /* MockMenuDetailsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAFFAD6827D3F6410015FB60 /* MockMenuDetailsPresenter.swift */; };
+		CAFFAD6D27D3F9810015FB60 /* MockMenuDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAFFAD6C27D3F9810015FB60 /* MockMenuDetailsView.swift */; };
+		CAFFAD7027D400690015FB60 /* MenuDetailsPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAFFAD6F27D400690015FB60 /* MenuDetailsPresenterTests.swift */; };
+		CAFFAD7227D406160015FB60 /* MenuDetailsViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAFFAD7127D406160015FB60 /* MenuDetailsViewTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -141,6 +145,10 @@
 		CA79AB0727CA50DE00BEFF93 /* OrderAppTestsThoraya.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = OrderAppTestsThoraya.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		CA79AB0927CA50DE00BEFF93 /* OrderAppTestsThoraya.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderAppTestsThoraya.swift; sourceTree = "<group>"; };
 		CA79AB0B27CA50DE00BEFF93 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CAFFAD6827D3F6410015FB60 /* MockMenuDetailsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockMenuDetailsPresenter.swift; sourceTree = "<group>"; };
+		CAFFAD6C27D3F9810015FB60 /* MockMenuDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockMenuDetailsView.swift; sourceTree = "<group>"; };
+		CAFFAD6F27D400690015FB60 /* MenuDetailsPresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuDetailsPresenterTests.swift; sourceTree = "<group>"; };
+		CAFFAD7127D406160015FB60 /* MenuDetailsViewTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuDetailsViewTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -171,6 +179,7 @@
 		8406A51527D275CD0093EE63 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				CAFFAD6E27D400040015FB60 /* MenuDetails */,
 				84D4C7B527D3B1C20022A398 /* Models */,
 				84BA1B6B27D2DF3D00FFF42F /* Menu */,
 				8406A52527D28AFF0093EE63 /* MyOrder */,
@@ -182,6 +191,7 @@
 		8406A51627D275E00093EE63 /* Mocks */ = {
 			isa = PBXGroup;
 			children = (
+				CAFFAD6727D3F5D10015FB60 /* MenuDetails */,
 				84BA1B7027D2DFD800FFF42F /* Menu */,
 				8406A52127D277A80093EE63 /* JSON */,
 				8406A51F27D277920093EE63 /* Network */,
@@ -522,6 +532,24 @@
 			path = OrderAppTestsThoraya;
 			sourceTree = "<group>";
 		};
+		CAFFAD6727D3F5D10015FB60 /* MenuDetails */ = {
+			isa = PBXGroup;
+			children = (
+				CAFFAD6827D3F6410015FB60 /* MockMenuDetailsPresenter.swift */,
+				CAFFAD6C27D3F9810015FB60 /* MockMenuDetailsView.swift */,
+			);
+			path = MenuDetails;
+			sourceTree = "<group>";
+		};
+		CAFFAD6E27D400040015FB60 /* MenuDetails */ = {
+			isa = PBXGroup;
+			children = (
+				CAFFAD6F27D400690015FB60 /* MenuDetailsPresenterTests.swift */,
+				CAFFAD7127D406160015FB60 /* MenuDetailsViewTests.swift */,
+			);
+			path = MenuDetails;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -700,15 +728,19 @@
 				84BA1B6D27D2DF5700FFF42F /* MenuPresenterTests.swift in Sources */,
 				84BA1B7227D2DFFE00FFF42F /* MockMenuPresenter.swift in Sources */,
 				84BA1B6A27D2D5AE00FFF42F /* MyOrderViewTests.swift in Sources */,
+				CAFFAD6D27D3F9810015FB60 /* MockMenuDetailsView.swift in Sources */,
 				8406A52427D2819B0093EE63 /* CategoryPresenterTests.swift in Sources */,
+				CAFFAD6927D3F6410015FB60 /* MockMenuDetailsPresenter.swift in Sources */,
 				84BA1B7627D2E16400FFF42F /* MockNetworkManagerr.swift in Sources */,
 				8406A51C27D276D50093EE63 /* MockNetworkManager.swift in Sources */,
+				CAFFAD7027D400690015FB60 /* MenuDetailsPresenterTests.swift in Sources */,
 				84D4C7B727D3B1EF0022A398 /* ModelsTests.swift in Sources */,
 				8406A52C27D28EF50093EE63 /* MockMyOrderView.swift in Sources */,
 				84BA1B7427D2E05A00FFF42F /* MockMenuView.swift in Sources */,
 				8406A51E27D277390093EE63 /* MockCategoryView.swift in Sources */,
 				84E0CC5C27CA5B6F0049FCE6 /* OrderAppTestsbySameh.swift in Sources */,
 				8406A53027D2BC4D0093EE63 /* CategoryViewControllerTests.swift in Sources */,
+				CAFFAD7227D406160015FB60 /* MenuDetailsViewTests.swift in Sources */,
 				84BA1B6F27D2DF8500FFF42F /* MenuViewTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
